@@ -2,7 +2,7 @@ package main
 
 import (
   "github.com/gin-gonic/gin"
-  "./controllers"
+  "controllers"
   "net/http"
   "strconv"
 )
