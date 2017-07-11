@@ -4,6 +4,7 @@ import (
   "github.com/gin-gonic/gin"
   "./controllers"
   "net/http"
+  "strconv"
 )
 
 func main() {
@@ -28,6 +29,21 @@ func main() {
       return
     }
     c.JSON(http.StatusOK, gin.H{"routes": result})
+  })
+
+  r.POST("/join", func(c *gin.Context) {
+    ctrl := controllers.NewUser()
+    age, ageErr := strconv.Atoi(c.PostForm("age"))
+    sex, sexErr := strconv.Atoi(c.PostForm("sex"))
+    if ageErr != nil || sexErr != nil {
+      return
+    }
+    result := ctrl.SignUp(age, sex)
+    if result == nil {
+      c.JSON(404, gin.H{})
+      return
+    }
+    c.JSON(http.StatusOK, gin.H{"user": result})
   })
   
   r.Run(":8080")
