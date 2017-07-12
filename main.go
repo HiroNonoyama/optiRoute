@@ -2,8 +2,7 @@ package main
 
 import (
   "github.com/gin-gonic/gin"
-  "github.com/hirononoyama/optiRoute"
-  "github.com/hirononoyama/optiRoute/controllers"
+  "./controllers"
   "net/http"
   "strconv"
 )
