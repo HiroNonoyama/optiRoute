@@ -3,6 +3,7 @@ package models
 import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/go-sql-driver/mysql"
+	"os"
 )
 
 type User struct {
@@ -12,7 +13,7 @@ type User struct {
 }
 
 func init() {
-	db, err := gorm.Open("mysql", "hirononoyama:hiro0117@/optiRoute?parseTime=true")
+	db, err := gorm.Open("mysql", os.Getenv("CLEARDB_DATABASE_URL"))
 	if err != nil {
 		panic(err)
 	}
