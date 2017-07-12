@@ -5,6 +5,7 @@ import (
   "./controllers"
   "net/http"
   "strconv"
+  "github.com/russross/blackfriday"
 )
 
 func main() {
