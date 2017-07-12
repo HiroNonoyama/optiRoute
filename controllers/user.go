@@ -1,7 +1,8 @@
 package controllers
 
 import (
-	"../models"
+	"github.com/hirononoyama/optiRoute"
+	"github.com/hirononoyama/optiRoute/models"
 )
 
 type User struct {
