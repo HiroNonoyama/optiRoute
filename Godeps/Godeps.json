@@ -28,7 +28,7 @@
 		},
 		{
 			"ImportPath": "github.com/hirononoyama/optiRoute/controllers",
-			"Rev": "eb444dcfbda23b6c65df1ad69fcaba0903b4b311"
+			"Rev": "b3496abcd274036fda8c56f0e9d7c02a70cad2a7"
 		},
 		{
 			"ImportPath": "github.com/json-iterator/go",
@@ -56,6 +56,29 @@
 		{
 			"ImportPath": "gopkg.in/yaml.v2",
 			"Rev": "cd8b52f8269e0feb286dfeef29f8fe4d5b397e0b"
+		},
+		{
+			"ImportPath": "github.com/hirononoyama/optiRoute/models",
+			"Rev": "b3496abcd274036fda8c56f0e9d7c02a70cad2a7"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/gorm",
+			"Comment": "v1.0-160-g2a14638",
+			"Rev": "2a1463811ee1dc85d168fd639a2d4251d030e6e5"
+		},
+		{
+			"ImportPath": "github.com/lib/pq",
+			"Comment": "go1.0-cutoff-173-gdd1fe20",
+			"Rev": "dd1fe2071026ce53f36a39112e645b4d4f5793a4"
+		},
+		{
+			"ImportPath": "github.com/jinzhu/inflection",
+			"Rev": "1c35d901db3da928c72a72d8458480cc9ade058f"
+		},
+		{
+			"ImportPath": "github.com/lib/pq/oid",
+			"Comment": "go1.0-cutoff-173-gdd1fe20",
+			"Rev": "dd1fe2071026ce53f36a39112e645b4d4f5793a4"
 		}
 	]
 }
