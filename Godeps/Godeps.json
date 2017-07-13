@@ -23,26 +23,12 @@
 			"Rev": "986049d24c3980e773b15ba271de58046f16200b"
 		},
 		{
-			"ImportPath": "github.com/go-sql-driver/mysql",
-			"Comment": "v1.3-27-gbf7f34f",
-			"Rev": "bf7f34fef176d890dfcc6e94319ac747291bc09a"
-		},
-		{
 			"ImportPath": "github.com/golang/protobuf/proto",
 			"Rev": "0a4f71a498b7c4812f64969510bcb4eca251e33a"
 		},
 		{
 			"ImportPath": "github.com/hirononoyama/optiRoute/controllers",
 			"Rev": "f44b6ab9288620ddb5d74d60137dbf357a85c26b"
-		},
-		{
-			"ImportPath": "github.com/jinzhu/gorm",
-			"Comment": "v1.0-160-g2a14638",
-			"Rev": "2a1463811ee1dc85d168fd639a2d4251d030e6e5"
-		},
-		{
-			"ImportPath": "github.com/jinzhu/inflection",
-			"Rev": "1c35d901db3da928c72a72d8458480cc9ade058f"
 		},
 		{
 			"ImportPath": "github.com/json-iterator/go",
