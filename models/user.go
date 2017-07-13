@@ -38,7 +38,7 @@ type UserRepository struct {
 }
 
 func (m UserRepository) Create(age int, sex int) *User {
-	db, err := gorm.Open("postgres", os.Getenv("DATABASE_URL"))
+	db, _ := gorm.Open("postgres", os.Getenv("DATABASE_URL"))
 	user := NewUser(age, sex)
 	db.Create(&user)
 	return &user
