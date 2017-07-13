@@ -4,6 +4,7 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
 	"os"
+	"fmt"
 )
 
 type User struct {
@@ -15,6 +16,7 @@ type User struct {
 func init() {
 	db, err := gorm.Open("postgres", os.Getenv("DATABASE_URL"))
 	if err != nil {
+		fmt.Println(err)
 		panic(err)
 	}
 	db.AutoMigrate(&User{})
