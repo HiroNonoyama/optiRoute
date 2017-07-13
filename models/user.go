@@ -2,7 +2,7 @@ package models
 
 import (
 	"github.com/jinzhu/gorm"
-	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"os"
 )
 
@@ -13,7 +13,7 @@ type User struct {
 }
 
 func init() {
-	db, err := gorm.Open("mysql", os.Getenv("CLEARDB_DATABASE_URL"))
+	db, err := gorm.Open("mysql", os.Getenv("DATABASE_URL"))
 	if err != nil {
 		panic(err)
 	}
@@ -36,7 +36,7 @@ type UserRepository struct {
 }
 
 func (m UserRepository) Create(age int, sex int) *User {
-	db, _ := gorm.Open("mysql", "hirononoyama:hiro0117@/optiRoute?parseTime=true")
+	db, err := gorm.Open("mysql", os.Getenv("DATABASE_URL"))
 	user := NewUser(age, sex)
 	db.Create(&user)
 	return &user
