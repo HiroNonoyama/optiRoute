@@ -36,10 +36,6 @@
 			"Rev": "f44b6ab9288620ddb5d74d60137dbf357a85c26b"
 		},
 		{
-			"ImportPath": "github.com/hirononoyama/optiRoute/models",
-			"Rev": "f44b6ab9288620ddb5d74d60137dbf357a85c26b"
-		},
-		{
 			"ImportPath": "github.com/jinzhu/gorm",
 			"Comment": "v1.0-160-g2a14638",
 			"Rev": "2a1463811ee1dc85d168fd639a2d4251d030e6e5"
