@@ -46,5 +46,5 @@ func main() {
     c.JSON(http.StatusOK, gin.H{"user": result})
   })
   
-  r.Run(":8080")
+  r.Run()
 }
