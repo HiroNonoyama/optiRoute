@@ -13,7 +13,7 @@ type User struct {
 }
 
 func init() {
-	db, err := gorm.Open("mysql", os.Getenv("DATABASE_URL"))
+	db, err := gorm.Open("postgres", os.Getenv("DATABASE_URL"))
 	if err != nil {
 		panic(err)
 	}
@@ -36,7 +36,7 @@ type UserRepository struct {
 }
 
 func (m UserRepository) Create(age int, sex int) *User {
-	db, err := gorm.Open("mysql", os.Getenv("DATABASE_URL"))
+	db, err := gorm.Open("postgres", os.Getenv("DATABASE_URL"))
 	user := NewUser(age, sex)
 	db.Create(&user)
 	return &user
