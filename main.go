@@ -34,7 +34,7 @@ func main() {
 
   r.POST("/join", func(c *gin.Context) {
     ctrl := controllers.NewUser()
-    birthday := c.PostForm("birthday")
+    birthday := strconv.Atoi(c.PostForm("birthday"))
     sex, sexErr := strconv.Atoi(c.PostForm("sex"))
     if birthdayErr != nil || sexErr != nil {
       return
