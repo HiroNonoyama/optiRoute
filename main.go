@@ -5,7 +5,7 @@ import (
   "github.com/hirononoyama/optiRoute/controllers"
   "net/http"
   "strconv"
-  "time"
+  // "time"
 )
 
 func main() {
@@ -34,7 +34,7 @@ func main() {
 
   r.POST("/join", func(c *gin.Context) {
     ctrl := controllers.NewUser()
-    birthday := strconv.Atoi(c.PostForm("birthday"))
+    birthday, birthdayErr := strconv.Atoi(c.PostForm("birthday"))
     sex, sexErr := strconv.Atoi(c.PostForm("sex"))
     if birthdayErr != nil || sexErr != nil {
       return
