@@ -39,7 +39,7 @@ func main() {
     if birthdayErr != nil || sexErr != nil {
       return
     }
-    result := ctrl.SignUp(birthday, sex)
+    result := ctrl.SignUp({ birthday: birthday, sex: sex })
     if result == nil {
       c.JSON(404, gin.H{})
       return
