@@ -8,7 +8,7 @@ import (
 
 type User struct {
 	gorm.Model
-	Birthday *time.Time
+	Birthday time.Time
 	Sex int `sql: "not null"`
 }
 
@@ -37,10 +37,11 @@ func NewUserRepository() UserRepository {
 type UserRepository struct {
 }
 
-func (m UserRepository) Create(birthday time.Time, sex int) *User {
+func (m UserRepository) Create(birthday string, sex int) *User {
 	// db, _ := gorm.Open("mysql", "hirononoyama:hiro0117@/optiRoute?parseTime=true")
 	db, _ := gorm.Open("postgres", ENV["DATABASE_URL"])
-	user := NewUser(birthday, sex)
+	data, _ := time.Parse("2016/01/02", birthday)
+	user := NewUser(data, sex)
 	db.Create(&user)
 	return &user
 }
