@@ -8,7 +8,7 @@ import (
 
 type User struct {
 	gorm.Model
-	Birthday time.Time
+	Birthday *time.Time
 	Sex int `sql: "not null"`
 }
 
