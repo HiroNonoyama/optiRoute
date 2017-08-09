@@ -38,7 +38,8 @@ type UserRepository struct {
 }
 
 func (m UserRepository) Create(birthday time.Time, sex int) *User {
-	db, _ := gorm.Open("mysql", "hirononoyama:hiro0117@/optiRoute?parseTime=true")
+	// db, _ := gorm.Open("mysql", "hirononoyama:hiro0117@/optiRoute?parseTime=true")
+	db, _ := gorm.Open("postgres", os.Getenv("DATABASE_URL"))
 	user := NewUser(birthday, sex)
 	db.Create(&user)
 	return &user
