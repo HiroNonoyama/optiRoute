@@ -3,11 +3,12 @@ package models
 import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/go-sql-driver/mysql"
+	"time"
 )
 
 type User struct {
 	gorm.Model
-	Age int `sql: "not null"`
+	Birthday time.Time
 	Sex int `sql: "not null"`
 }
 
@@ -17,12 +18,13 @@ func init() {
 		panic(err)
 	}
 	db.AutoMigrate(&User{})
+	db.Model(&User{}).DropColumn("age")
 	defer db.Close()
 }
 
-func NewUser(age int, sex int) User {
+func NewUser(birthday time.Time, sex int) User {
 	return User{
-		Age: age,
+		Birthday: birthday,
 		Sex: sex,
 	}
 }
@@ -34,9 +36,9 @@ func NewUserRepository() UserRepository {
 type UserRepository struct {
 }
 
-func (m UserRepository) Create(age int, sex int) *User {
+func (m UserRepository) Create(birthday time.Time, sex int) *User {
 	db, _ := gorm.Open("mysql", "hirononoyama:hiro0117@/optiRoute?parseTime=true")
-	user := NewUser(age, sex)
+	user := NewUser(birthday, sex)
 	db.Create(&user)
 	return &user
 }

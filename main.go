@@ -5,6 +5,7 @@ import (
   "./controllers"
   "net/http"
   "strconv"
+  "time"
 )
 
 func main() {
@@ -33,18 +34,18 @@ func main() {
 
   r.POST("/join", func(c *gin.Context) {
     ctrl := controllers.NewUser()
-    age, ageErr := strconv.Atoi(c.PostForm("age"))
+    birthday, birthdayErr := time.Parse("2016/01/02", c.PostForm("birthday"))
     sex, sexErr := strconv.Atoi(c.PostForm("sex"))
-    if ageErr != nil || sexErr != nil {
+    if birthdayErr != nil || sexErr != nil {
       return
     }
-    result := ctrl.SignUp(age, sex)
+    result := ctrl.SignUp(birthday, sex)
     if result == nil {
       c.JSON(404, gin.H{})
       return
     }
     c.JSON(http.StatusOK, gin.H{"user": result})
   })
-  
+
   r.Run(":8080")
 }
