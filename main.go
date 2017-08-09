@@ -2,7 +2,7 @@ package main
 
 import (
   "github.com/gin-gonic/gin"
-  "./controllers"
+  "github.com/hirononoyama/optiRoute/controllers"
   "net/http"
   "strconv"
   "time"
@@ -47,5 +47,5 @@ func main() {
     c.JSON(http.StatusOK, gin.H{"user": result})
   })
 
-  r.Run(":8080")
+  r.Run()
 }

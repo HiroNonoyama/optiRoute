@@ -13,8 +13,9 @@ type User struct {
 }
 
 func init() {
-	db, err := gorm.Open("mysql", "hirononoyama:hiro0117@/optiRoute?parseTime=true")
+	db, err := gorm.Open("postgres", os.Getenv("DATABASE_URL"))
 	if err != nil {
+		fmt.Println(err)
 		panic(err)
 	}
 	db.AutoMigrate(&User{})
